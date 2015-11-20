@@ -7,7 +7,7 @@ class Notification extends Eloquent
 {
     protected $table = 'notifications';
 
-    protected $fillable = array('noteable_id', 'noteable_type', 'recepient_id', 'created_at', 'updated_at', 'read_at');
+    protected $fillable = array('noteable_id', 'noteable_type', 'recepient_id', 'created_at', 'updated_at', 'read_at', 'is_read');
     protected $guarded = array('id');
     protected $appends = array('present');
 

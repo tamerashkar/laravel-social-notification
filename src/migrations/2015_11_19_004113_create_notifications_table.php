@@ -26,6 +26,7 @@ class CreateNotificationsTable extends Migration {
 
       $table->timestamps();
       $table->timestamp('read_at');
+      $table->boolean('is_read')->default(false);
 
     });
   }
