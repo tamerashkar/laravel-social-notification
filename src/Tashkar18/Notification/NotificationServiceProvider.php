@@ -19,8 +19,6 @@ class NotificationServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('tashkar18/notification');
-
-		 include __DIR__.'/routes.php';
 	}
 
 	/**

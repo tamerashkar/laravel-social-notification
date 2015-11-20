@@ -1,6 +1,6 @@
 {
     "name": "tashkar18/notification",
-    "description": "",
+    "description": "Simple Notification System for Laravel 4.2",
     "authors": [
         {
             "name": "Tamer Ashkar",
@@ -18,8 +18,7 @@
     },
     "autoload": {
         "classmap": [
-            "src/migrations",
-            "src/controllers"
+            "src/migrations"
         ],
         "psr-0": {
             "Tashkar18\\Notification\\": "src/"
