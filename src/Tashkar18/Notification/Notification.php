@@ -1,7 +1,6 @@
 <?php namespace Tashkar18\Notification;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
-use Illuminate\View\View;
 
 class Notification extends Eloquent
 {
@@ -23,20 +22,23 @@ class Notification extends Eloquent
 
     public function present()
     {
-        return $this->notable->presentNotification();
+        $className = $this->getClassName($this->notable);
+        $viewName = app('config')->get('notification::view') . "." . $className;
+
+
+        if (app('view')->exists($viewName))
+        {
+            $view = app('view')->make($viewName)->with($className, $this->notable);
+
+            return $view->render();
+        }
     }
 
-    /**
-     * To Do:
-     */
-    // public function present()
-    // {
-    //     if (View::exists('notifications.'))
-    //     {
-    //         $view = View::make('notifications.');
-    //         return $view->render();
-    //     }
-    // }
+
+    protected function getClassName($class)
+    {
+        return strtolower((new \ReflectionClass($class))->getShortName());
+    }
 
     public function notable()
     {
