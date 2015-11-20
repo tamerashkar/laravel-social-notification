@@ -12,8 +12,4 @@ interface NotificationInterface {
      */
     public function getNotificationSender();
 
-    /**
-     * @return string
-     */
-    public function presentNotification();
 }
