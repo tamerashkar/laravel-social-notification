@@ -13,7 +13,7 @@ trait NotificationTrait {
         $recipient_id = $this->getNotificationRecipient();
         $sender_id = $this->getNotificationSender();
 
-        if ($recipient_id === $sender_id) {
+        if ($recipient_id == $sender_id) {
             return false;
         }
 
