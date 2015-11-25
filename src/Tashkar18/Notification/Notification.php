@@ -22,7 +22,10 @@ class Notification extends Eloquent
 
     public function present()
     {
-        if( ! count($this->notable)) return '';
+        if( ! count($this->notable))
+        {
+            return '';
+        }
 
         $className = $this->getClassName($this->notable);
         $viewName = app('config')->get('notification::view') . "." . $className;
